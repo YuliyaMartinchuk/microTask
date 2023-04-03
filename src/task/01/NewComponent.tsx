@@ -9,7 +9,6 @@ type TopCarsPropsType = {
     model: string
 }
 export const TopCars = (props: ListCarsPropsType) => {
-
     return (
         <table className={s.table}>
             <thead>
@@ -31,12 +30,6 @@ export const TopCars = (props: ListCarsPropsType) => {
         </table>
     )
 }
-
-
-
-
-
-
 
 
 // type NewComponentType = {
