@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.buttonNumber {
+  margin: 10px;
+  background-color: cornflowerblue;
+
+  border-radius: 7px;
+}
+
+.buttonNull {
+  margin: 10px;
+  background-color: rgba(127, 255, 157, 0.76);
+  border-radius: 7px;
+}

@@ -1,14 +1,18 @@
 // import React, {useState} from 'react';
-import './App.css';
+import './App.module.css';
 import React, {MouseEvent, useState} from 'react';
-import {TopCars} from "./task/01/NewComponent";
-import {Button} from "./components/Button";
-import {FilterComponent, FilterType} from "./task/02/task2";
-
+import {TopCars} from "./task/Monday, week №1/01/NewComponent";
+import {Button} from "./components/Mondey, week №1/Button";
+import {FilterComponent, FilterType} from "./task/Monday, week №1/02/task2";
+import s from "./task/Monday, week №1/02/task2.module.css";
+import k from "./App.module.css";
+import {FullInput} from "./components/Mondey, week №2/FullInput";
 
 
 function App() {
 
+    // ---------------------
+    // Monday, week №1
     // ---------------------
     // Buttons
     // ---------------------
@@ -75,17 +79,33 @@ function App() {
 
     // ------------------
 
+    // ---------------------
+    // Monday, week №2
+    // ---------------------
 
-    return (<div className="App">
+    let [message, setMessage] = useState([
+        {message:"message1"},
+        {message:"message2"},
+        {message:"message3"}
+    ])
+
+    const addMessage=(title:string)=>{
+        let newMessage = {message:title};
+        setMessage([newMessage, ...message])
+
+    }
+
+
+    return (<div className={k.App}>
+        {/*---------------------*/}
+        {/* Monday, week №1*/}
+        {/*---------------------*/}
 
         <TopCars Cars={topCars}/>
-
         {/* ---------------*/}
         {/* Micro task 2*/}
         {/*---------------*/}
         <FilterComponent currentMoney = {currentMoney} onClickFilterHandler = {onClickFilterHandler}/>
-
-
 
         {/*------------------*/}
         {/*Buttons*/}
@@ -99,8 +119,22 @@ function App() {
         {/*----------------*/}
 
         <h1>{a}</h1>
-        <button onClick={onClickHandler}>number</button>
-        <button onClick={onClickHandler0}>0</button>
+        <button className={k.buttonNumber} onClick={onClickHandler}>number</button>
+        <button className={k.buttonNull} onClick={onClickHandler0}>0</button>
+
+        {/*---------------------*/}
+        {/* Monday, week №2*/}
+        {/*---------------------*/}
+
+
+        <div>
+            < FullInput addMessage={addMessage}/>
+            {message.map((el,index) => {
+                return (
+                    <div key={index}> {el.message}</div>
+                )
+                })}
+        </div>
 
 
     </div>)

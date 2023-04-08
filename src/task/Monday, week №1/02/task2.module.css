@@ -1,0 +1,17 @@
+.buttonAll {
+    margin: 10px;
+    background-color: cornflowerblue;
+    border-radius: 7px;
+}
+
+.buttonRUBLS {
+    margin: 10px;
+    background-color: #f8c9c7;
+    border-radius: 7px;
+}
+
+.buttonDollars {
+    margin: 10px;
+    background-color: rgba(127, 255, 157, 0.76);
+    border-radius: 7px;
+}
