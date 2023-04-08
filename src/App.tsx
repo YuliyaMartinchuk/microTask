@@ -7,6 +7,8 @@ import {FilterComponent, FilterType} from "./task/Monday, week №1/02/task2";
 import s from "./task/Monday, week №1/02/task2.module.css";
 import k from "./App.module.css";
 import {FullInput} from "./components/Mondey, week №2/FullInput";
+import {Input} from "./components/Mondey, week №2/Input";
+import {ButtonInput} from "./components/Mondey, week №2/ButtonInput";
 
 
 function App() {
@@ -89,10 +91,19 @@ function App() {
         {message:"message3"}
     ])
 
+    let [title, SetTitle] = useState('')
+    console.log(title)
+
+
     const addMessage=(title:string)=>{
         let newMessage = {message:title};
         setMessage([newMessage, ...message])
 
+    }
+
+    const callBackButtonInputHandler = () => {
+        addMessage(title)
+        SetTitle("")
     }
 
 
@@ -128,7 +139,9 @@ function App() {
 
 
         <div>
-            < FullInput addMessage={addMessage}/>
+            {/*< FullInput addMessage={addMessage}/>*/}
+            <Input SetTitle={SetTitle} title={title}/>
+            <ButtonInput name={"+"} callBack={callBackButtonInputHandler} />
             {message.map((el,index) => {
                 return (
                     <div key={index}> {el.message}</div>
